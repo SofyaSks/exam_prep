@@ -10,7 +10,12 @@ public:
 	int check_employee_hour();
 	double check_employee_fix();
 
-	
+	string getName();
+	string getSurname();
+
+	void PrintEmpHour();
+
+	int getID();
 
 };
 

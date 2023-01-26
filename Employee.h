@@ -1,5 +1,7 @@
 #pragma once
 #include <iostream>
+#include <iomanip>
+#include <stdlib.h>
 #include <time.h>
 #include <algorithm>
 #include <vector>

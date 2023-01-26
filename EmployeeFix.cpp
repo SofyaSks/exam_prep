@@ -8,10 +8,10 @@ EmployeeFix::EmployeeFix()
 	payment_fix = 0;
 }
 
-EmployeeFix::EmployeeFix(string ln, string fn, int id, double _paymentfix)
+EmployeeFix::EmployeeFix(string fn, string ln, int id, double _paymentfix)
 {
-	LN = ln;
 	FN = fn;
+	LN = ln;
 	ID = id;
 	payment_fix = _paymentfix;
 }
@@ -24,4 +24,24 @@ double EmployeeFix::check_employee_fix()
 int EmployeeFix::check_employee_hour()
 {
 	return 0;
+}
+
+string EmployeeFix::getName()
+{
+	return FN;
+}
+
+string EmployeeFix::getSurname()
+{
+	return LN;
+}
+
+void EmployeeFix::PrintEmpFix()
+{
+	cout << FN << setw(20) << LN << setw(20) << ID << setw(20) << check_employee_fix() << endl;
+}
+
+int EmployeeFix::getID()
+{
+	return ID;
 }

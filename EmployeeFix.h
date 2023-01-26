@@ -10,10 +10,11 @@ public:
 	double check_employee_fix();
 	int check_employee_hour();
 
-	vector <EmployeeFix> fixEmp{
-		EmployeeFix("", "", 10, 10),
-	};
+	string getName();
+	string getSurname();
 
+	void PrintEmpFix();
 
+	int getID();
 };
 
