@@ -12,10 +12,15 @@ public:
 
 	string getName();
 	string getSurname();
+	int getID();
 
 	void PrintEmpHour();
 
-	int getID();
+	void searchByNameHour(vector <EmployeeHour>& v, string n);
+
+	void searchBySurnameHour(vector <EmployeeHour>& v, string n);
+
+	
 
 };
 

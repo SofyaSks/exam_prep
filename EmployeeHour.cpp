@@ -41,6 +41,34 @@ void EmployeeHour::PrintEmpHour()
 	cout << FN <<setw(20) << LN << setw(20) << ID << setw(20) << check_employee_hour() << endl;
 }
 
+void EmployeeHour::searchByNameHour(vector<EmployeeHour>& v, string n)
+{
+	cout << endl;
+	transform(n.begin(), n.end(), n.begin(), ::toupper);
+	for (int i = 0; i < v.size(); i++)
+	{
+		transform(v[i].FN.begin(), v[i].FN.end(), v[i].FN.begin(), ::toupper);
+		if (v[i].FN == n) {
+			v[i].PrintEmpHour();
+			cout << endl << endl;
+		}
+	}
+}
+
+void EmployeeHour::searchBySurnameHour(vector<EmployeeHour>& v, string n)
+{
+	cout << endl;
+	transform(n.begin(), n.end(), n.begin(), ::toupper);
+	for (int i = 0; i < v.size(); i++)
+	{
+		transform(v[i].LN.begin(), v[i].LN.end(), v[i].LN.begin(), ::toupper);
+		if (v[i].LN == n) {
+			v[i].PrintEmpHour();
+			cout << endl << endl;
+		}
+	}
+}
+
 int EmployeeHour::getID()
 {
 	return ID;

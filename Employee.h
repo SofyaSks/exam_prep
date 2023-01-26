@@ -6,6 +6,7 @@
 #include <algorithm>
 #include <vector>
 #include <time.h>
+#include <fstream>
 using namespace std;
 
 //Для сотрудника должны храниться его фамилия, имя, ID, почасовая ставка или фикс-я ставка за месяц.

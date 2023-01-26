@@ -67,14 +67,26 @@ int main() {
 
 
 	do {
-		cout << "1 - Show all employers" << endl;
-		cout << "2 - Sort employers by salary" << endl;
-		cout << "3 - Sort employers by first name" << endl;
-		cout << "4 - Sort employers by last name" << endl;
-		cout << "5 - Search for employer" << endl;
-		cout << "0 - Exit" << endl;
-		cin >> choice;
-		system("cls");
+		try {
+			cout << "1 - Show all employers" << endl;
+			cout << "2 - Sort employers by salary" << endl;
+			cout << "3 - Sort employers by first name" << endl;
+			cout << "4 - Sort employers by last name" << endl;
+			cout << "5 - Search for employer" << endl;
+			cout << "0 - Exit" << endl;
+			cin >> choice;
+			system("cls");
+			if (choice > 5 || choice < 0) {
+				throw choice;
+			}
+		}
+		catch (int n) {
+			cout << "Error. No available choice at " << choice << endl << endl;
+		}
+		catch (...) {
+			cout << "Error universal" << endl;
+		}
+		
 
 		if (choice == 1) {
 			cout << "Employee list:  " << endl << endl;
@@ -197,40 +209,148 @@ int main() {
 		}
 
 		if (choice == 5) {
+			int ch;
 			cout << "Choose search method: "<< endl;
 			cout << "1 - by name" << endl;
 			cout << "2 - by surname" << endl;
 			cout << "3 - by id" << endl;
-			cin >> empchoice;
-			if (empchoice == 1) {
-				cout << "Enter the name: ";
-				string n;
-				cin >> n;
-				c.searchByNameHour(hourEmp,n);
-			}
-			else
-				if (empchoice == 2) {
-					cout << "Enter the surname: ";
+			cin >> ch;
+			system("cls");
+			if (ch == 1) {
+				cout << "1 - Sort hour employers" << endl;
+				cout << "2 - Sort fix employers" << endl;
+				cout << "choose -> ";
+				cin >> empchoice;
+				system("cls");
+				if (empchoice == 1) {
+					cout << "Enter the name: ";
 					string n;
 					cin >> n;
+					system("cls");
+					c.searchByNameHour(hourEmp, n);
+				}
+				else 
+					if (empchoice == 2) {
+						cout << "Enter the name: ";
+						string n;
+						cin >> n;
+						system("cls");
+						c.searchByNameFix(fixEmp, n);
+					}
+					else {
+						cout << "Error\n";
+						continue;
+					}
+			}
+			else
+				if (ch == 2) {
+					cout << "1 - Sort hour employers" << endl;
+					cout << "2 - Sort fix employers" << endl;
+					cout << "choose -> ";
+					cin >> empchoice;
+					system("cls");
+					if (empchoice == 1) {
+						cout << "Enter the surname: ";
+						string n;
+						cin >> n;
+						system("cls");
+						c.searchBySurnameHour(hourEmp, n);
+					}
+					else
+						if (empchoice == 2) {
+							cout << "Enter the surname: ";
+							string n;
+							cin >> n;
+							system("cls");
+							c.searchBySurnameFix(fixEmp, n);
+						}
+						else {
+							cout << "Error\n";
+							continue;
+						}
 				}
 				else
-					if (empchoice == 3) {
-						cout << "Enter the id: ";
-						int i;
-						cin >> i;
-						cout << endl;
-						c.showEmp();
-						c.searchByIdHour(hourEmp,i);
+					if (ch == 3) {
+						cout << "1 - Sort hour employers" << endl;
+						cout << "2 - Sort fix employers" << endl;
+						cout << "choose -> ";
+						cin >> empchoice;
+						system("cls");
+						if (empchoice == 1) {
+							cout << "Enter the id: ";
+							int i;
+							cin >> i;
+							system("cls");
+							c.searchByIdHour(hourEmp, i);
+						}
+						else
+							if (empchoice == 2) {
+								cout << "Enter the id: ";
+								int i;
+								cin >> i;
+								system("cls");
+								c.searchByIdFix(fixEmp, i);
+							}
+							else {
+								cout << "Error\n";
+								continue;
+							}
+					}
+					else {
+						cout << "Error\n";
+						continue;
 					}
 		}
 
 	} while (choice != 0);
 
 
-	
+	/*ofstream fout;
+	fout.open("employeehour.txt", ofstream::out); 
+	if (!fout.is_open()) {
+		cout << "ERROR! File is not open\n";
+	}
+	else {
+		cout << "File is open" << endl;
+		for (int i = 0; i < hourEmp.size(); i++)
+		{
+			fout.write((char*)&hourEmp[i], sizeof(EmployeeHour));
+		}
+		cout << "End of file" << endl;
+		fout.close();
+	}
 
-	
+	fout.open("employeefix.txt", ofstream::out);
+	if (!fout.is_open()) {
+		cout << "ERROR! File is not open\n";
+	}
+	else {
+		cout << "File is open" << endl;
+		for (int i = 0; i < fixEmp.size(); i++)
+		{
+			fout.write((char*)&fixEmp[i], sizeof(EmployeeFix));
+		}
+		cout << "End of file" << endl;
+		fout.close();
+	}*/
+
+	/*vector <EmployeeHour> hourE;
+	ifstream fin;
+
+	fin.open("employeehour.txt");
+	if (!fin.is_open()) {
+		cout << "Error. File is not open\n";
+	}
+	else {
+		int i = 0;
+		cout << "File is open" << endl;
+		while (fin.read((char*)&hourE[i], sizeof(hourEmp))) {
+			hourE[i].PrintEmpHour();
+			i++;
+		}
+		fin.close();
+		cout << "End of read\n";
+	}*/
 
 
 	return 0;

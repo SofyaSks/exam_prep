@@ -12,9 +12,13 @@ public:
 
 	string getName();
 	string getSurname();
+	int getID();
 
 	void PrintEmpFix();
 
-	int getID();
+
+	void searchByNameFix(vector <EmployeeFix>& v, string n);
+
+	void searchBySurnameFix(vector <EmployeeFix>& v, string n);
 };
 
