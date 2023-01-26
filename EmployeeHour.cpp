@@ -38,7 +38,7 @@ string EmployeeHour::getSurname()
 
 void EmployeeHour::PrintEmpHour()
 {
-	cout << FN <<setw(20) << LN << setw(20) << ID << setw(20) << check_employee_hour() << endl;
+	cout << setw(20) << FN << setw(20) << LN << setw(20) << ID << setw(20) << check_employee_hour() << endl;
 }
 
 void EmployeeHour::searchByNameHour(vector<EmployeeHour>& v, string n)

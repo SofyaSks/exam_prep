@@ -37,6 +37,8 @@ int main() {
 
 	Company c;
 
+	
+
 	vector <EmployeeHour> hourEmp{
 		EmployeeHour("Oleg", "Romanov",110, 200),
 		EmployeeHour("Maria", "Poletaeva", 220, 150),
@@ -63,8 +65,52 @@ int main() {
 		EmployeeFix("Michael", "Struc", 110, 100000)
 	};
 
+	/*ofstream fout;
+	fout.open("employeehour.txt", ofstream::out);
+	if (!fout.is_open()) {
+		cout << "ERROR! File is not open\n";
+	}
+	else {
+		cout << "File is open" << endl;
+		for (int i = 0; i < hourEmp.size(); i++)
+		{
+			fout.write((char*)&hourEmp[i], sizeof(EmployeeHour));
+		}
+		cout << "End of file" << endl;
+		fout.close();
+	}
 
+	fout.open("employeefix.txt", ofstream::out);
+	if (!fout.is_open()) {
+		cout << "ERROR! File is not open\n";
+	}
+	else {
+		cout << "File is open" << endl;
+		for (int i = 0; i < fixEmp.size(); i++)
+		{
+			fout.write((char*)&fixEmp[i], sizeof(EmployeeFix));
+		}
+		cout << "End of file" << endl;
+		fout.close();
+	}*/
 
+	/*vector <EmployeeHour> hourE;
+	ifstream fin;
+
+	fin.open("employeehour.txt");
+	if (!fin.is_open()) {
+		cout << "Error. File is not open\n";
+	}
+	else {
+		int i = 0;
+		cout << "File is open" << endl;
+		while (fin.read((char*)&hourE[i], sizeof(hourEmp))) {
+			hourE[i].PrintEmpHour();
+			i++;
+		}
+		fin.close();
+		cout << "End of read\n";
+	}*/
 
 	do {
 		try {
@@ -227,6 +273,7 @@ int main() {
 					string n;
 					cin >> n;
 					system("cls");
+					c.showEmp();
 					c.searchByNameHour(hourEmp, n);
 				}
 				else 
@@ -235,6 +282,7 @@ int main() {
 						string n;
 						cin >> n;
 						system("cls");
+						c.showEmp();
 						c.searchByNameFix(fixEmp, n);
 					}
 					else {
@@ -254,6 +302,7 @@ int main() {
 						string n;
 						cin >> n;
 						system("cls");
+						c.showEmp();
 						c.searchBySurnameHour(hourEmp, n);
 					}
 					else
@@ -262,6 +311,7 @@ int main() {
 							string n;
 							cin >> n;
 							system("cls");
+							c.showEmp();
 							c.searchBySurnameFix(fixEmp, n);
 						}
 						else {
@@ -281,6 +331,7 @@ int main() {
 							int i;
 							cin >> i;
 							system("cls");
+							c.showEmp();
 							c.searchByIdHour(hourEmp, i);
 						}
 						else
@@ -289,6 +340,7 @@ int main() {
 								int i;
 								cin >> i;
 								system("cls");
+								c.showEmp();
 								c.searchByIdFix(fixEmp, i);
 							}
 							else {
@@ -305,52 +357,9 @@ int main() {
 	} while (choice != 0);
 
 
-	/*ofstream fout;
-	fout.open("employeehour.txt", ofstream::out); 
-	if (!fout.is_open()) {
-		cout << "ERROR! File is not open\n";
-	}
-	else {
-		cout << "File is open" << endl;
-		for (int i = 0; i < hourEmp.size(); i++)
-		{
-			fout.write((char*)&hourEmp[i], sizeof(EmployeeHour));
-		}
-		cout << "End of file" << endl;
-		fout.close();
-	}
+	
 
-	fout.open("employeefix.txt", ofstream::out);
-	if (!fout.is_open()) {
-		cout << "ERROR! File is not open\n";
-	}
-	else {
-		cout << "File is open" << endl;
-		for (int i = 0; i < fixEmp.size(); i++)
-		{
-			fout.write((char*)&fixEmp[i], sizeof(EmployeeFix));
-		}
-		cout << "End of file" << endl;
-		fout.close();
-	}*/
-
-	/*vector <EmployeeHour> hourE;
-	ifstream fin;
-
-	fin.open("employeehour.txt");
-	if (!fin.is_open()) {
-		cout << "Error. File is not open\n";
-	}
-	else {
-		int i = 0;
-		cout << "File is open" << endl;
-		while (fin.read((char*)&hourE[i], sizeof(hourEmp))) {
-			hourE[i].PrintEmpHour();
-			i++;
-		}
-		fin.close();
-		cout << "End of read\n";
-	}*/
+	
 
 
 	return 0;

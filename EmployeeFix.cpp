@@ -38,7 +38,7 @@ string EmployeeFix::getSurname()
 
 void EmployeeFix::PrintEmpFix()
 {
-	cout << FN << setw(20) << LN << setw(20) << ID << setw(20) << check_employee_fix() << endl;
+	cout << setw(20) << FN << setw(20) << LN << setw(20) << ID << setw(20) << check_employee_fix() << endl;
 }
 
 void EmployeeFix::searchByNameFix(vector<EmployeeFix>& v, string n)

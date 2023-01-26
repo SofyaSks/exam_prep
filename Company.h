@@ -10,11 +10,11 @@ class Company : public EmployeeHour, public EmployeeFix
 {
 private:
 	string name;
-	
+
 
 public:
 	Company();
-	
+
 	void showEmp();
 
 	void showFiveHour(vector <EmployeeHour>& v);
@@ -30,5 +30,9 @@ public:
 	void searchByIdFix(vector <EmployeeFix>& v, int id);
 
 	
+
+	
 };
+	
+
 

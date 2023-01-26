@@ -10,7 +10,7 @@ Company::Company()
 
 void Company::showEmp()
 {
-	cout << "Name" << setw(20) << "Surname" << setw(20) << "ID" << setw(20) << "Salary" << endl << endl;
+	cout << setw(20) << "Name" << setw(20) << "Surname" << setw(20) << "ID" << setw(20) << "Salary" << endl << endl;
 }
 
 void Company::showFiveHour(vector<EmployeeHour>& v)
